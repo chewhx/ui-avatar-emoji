@@ -17,6 +17,8 @@ https://ui-avatar-emoji.vercel.app/api/avatar
 
 ### Emoji
 
+Default: `👻`
+
 ```plaintext
 https://ui-avatar-emoji.vercel.app/api/avatar?emoji=😀
 ```

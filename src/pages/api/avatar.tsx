@@ -7,7 +7,6 @@ import { emojiUnicode } from '../../lib/emoji-unicode';
 import { randomColor } from '../../lib/random-color';
 import { isValidNumber } from '../../lib/is-valid-number';
 import { clampNumber } from '../../lib/clamp-number';
-import Head from 'next/head';
 
 export const config = {
   runtime: 'edge',
@@ -68,7 +67,7 @@ export default async function handler(req: NextRequest) {
   }
 
   // 'emoji=?'
-  const emoji = searchParams.get('emoji');
+  const emoji = searchParams.get('emoji') || '👻';
   const unicode = emojiUnicode(emoji!).replaceAll('_fe0f', '');
 
   return new ImageResponse(
@@ -81,7 +80,6 @@ export default async function handler(req: NextRequest) {
         />
       </div>
     ),
-
     {
       ...dimensions,
     }
